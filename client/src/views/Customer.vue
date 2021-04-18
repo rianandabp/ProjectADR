@@ -128,7 +128,7 @@ export default class Project extends Vue {
     .header{
         display: flex;
         width: 100%;
-        padding-top: 15px;
+        padding-top: 20px;
     }
 
     .text{
