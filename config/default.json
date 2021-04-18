@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://rianandabp:b270804rbp@adrmotorsport.kr8lt.mongodb.net/projectadr?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken"
+}
