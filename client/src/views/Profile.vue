@@ -72,7 +72,7 @@ export default class Profile extends Vue {
   }
 
   h3{
-    padding-bottom: 30px ;
+    padding-bottom: 20px ;
   }
   .form-group{
       padding-left: 10px ;
