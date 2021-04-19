@@ -53,7 +53,7 @@
                 <b-card-text class="text">Phone Number: 082110500074 </b-card-text>
                 
                 <div class="button">
-                    <div id="visit"> <b-button variant="success"> Visit </b-button></div>
+                    <div id="visit"> <b-button variant="success" @click="$router.push('/customer/details')"> Visit </b-button></div>
                     <div id="edit">
                         <b-button id="be" variant="primary" @click="$bvModal.show('dp3-' + '1')"> Edit </b-button>
                         <b-modal :id="'dp3-' + '1'">

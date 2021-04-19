@@ -1,42 +1,36 @@
 <template>
     <b-container fluid class="container">
-      <b-row>
-        <b-col cols="3" class="sidebar"> 
-          <b-row> <h3 class="title"> Toyota Yaris TRD </h3></b-row>
-          <b-row> <p> Color: Putih</p></b-row> 
-          <b-row> <p> Plate Number: B 1787 WMR</p></b-row> 
-          <b-row> <p> Year: 2012</p></b-row>
-          <b-row> <p> Owner: <b-link> Ryan</b-link></p></b-row>  
-          <b-row> <p id="desc"> description..</p></b-row>   
-          <b-row> <p class="price" id="tp"> Total Project: 1 </p></b-row>
-          <b-row> <p class="price" id="re"> Total Spent: Rp. 35.000.000 </p></b-row>
-          <b-row>  <b-button class="button" size="sm" variant="primary"> Edit Description</b-button></b-row>
-          
-        </b-col>
-        <b-col> 
-          <b-row> <h4> Service Details </h4></b-row>
-          <b-row> 
-            <table>
-                <tr>
-                    <th class="desc"> Description </th>
-                    <th class="date"> Date </th>
-                    <th class="prices"> Price </th>
-                    <th class="add"> Add Item </th>
-                    <th class="used"> Item Used </th>
-                </tr>
-                <tr>
-                    <td class="desc"> Turun Mesin </td>
-                    <td class="date"> 21/04/2020 </td>
-                    <td class="prices"> Rp.10.000.000</td>
-                    <td class="add"> <b-icon icon="arrow-return-right"></b-icon> </td>
-                    <td class="used"> <b-icon icon="arrows-fullscreen"></b-icon> </td>
-                </tr>
+        <b-row class="header">
+            <b-col id="right">
+                <b-dropdown right text="Sort By" size="sm">
+                    <b-dropdown-item>Date</b-dropdown-item>
+                    <b-dropdown-item>Price</b-dropdown-item>
+                    <b-dropdown-item>Alphabet</b-dropdown-item>
+                </b-dropdown>
+            </b-col>
+        </b-row>
+        <b-row class="content">
+
+            <b-card
+                title="Pasang Turbo Yaris Ryan"
+                img-height="90rem"
+                style="max-width: 20rem;"
+                class="mb-2"
+            >
+                <b-row no-gutters>
+                    <b-col> <p> Start Date: <br> 29-10-2019</p> </b-col>
+                    <b-col> <p> End Date: <br> 29-10-2020</p> </b-col>
+                </b-row>
+                <b-card-text class="text" id="desc">Pasang Turbo, dll </b-card-text>
+                <b-card-text class="text">Status: Awaiting Payment </b-card-text>
+                <b-card-text id="value">Project Value: Rp.40.000.000 </b-card-text>
                 
-            </table>
-          </b-row>
-        </b-col>
-      </b-row>
-    
+                <div class="button">
+                    <div id="visit"> <b-button variant="success" @click="$router.push('/project/details')"> Visit </b-button></div>
+                </div>
+            </b-card>
+
+        </b-row>
     </b-container>
 </template>
 
@@ -49,79 +43,87 @@ import { Component, Vue } from "vue-property-decorator";
   components: {}
 })
 
-export default class CarDetails extends Vue {
-    
+export default class Project extends Vue {
     
 }
 </script>
 
 <style scoped>
+
+    .content{
+        display: flex;
+        flex-direction:row;
+        max-height: 950px;
+        overflow-y: scroll;
+        margin-top: 20px;
+        padding-top: 10px;
+    }
+
+    .header{
+        display: flex;
+        width: 100%;
+        padding-top: 15px;
+    }
+
+    .text{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        text-align: center;
+        font-size: 16px;
+    }
+
     .button{
-      width: 170px;
-      margin-top: 25px;
-    }
-
-    table{
-      margin: 0 auto;
-      margin-top: 20px;
-    }
-
-    .desc{
-      width: 400px;
-    }
-
-    .date{
-      width: 150px;
-    }
-
-    .prices{
-      width: 200px;
-    }
-
-    .add{
-      width: 100px;
-    }
-
-    .used{
-      width: 100px;
-    }
-
-    #plate{
-      font-size: 14px;
-    }
-
-    h4{
-      margin: 0 auto;
-      margin-top: 20px;
-    }
-
-    #tp{
-      margin-top: 30px;
-    }
-
-    #desc{
-        font-size: 14px;
-    }
-
-    .price{
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    #re{
-      color: green;
-    }
-
-    #fp{
-      color: red;
+        margin: 0 auto;
     }
 
     p{
-      text-align: left;
-    }
-    .title{
-      margin-top: 20px;
-      text-align: left;
+        font-size: 14px;
     }
 
+    #value{
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    #desc{
+        font-size: 14px;
+    }
+    #left{
+        text-align: left;
+    }
+
+    #right{
+        text-align: right;
+    }
+
+    #be{
+        margin-top: 8px;
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    .b-link{
+        overflow: hidden;
+    }
+
+    h5{
+        padding-top: 6px;
+    }
+
+    #delete{
+        padding:8px ;
+    }
+    #visit{
+        padding:8px ;
+    }
+
+    .mb-2, .my-2 {
+        margin-bottom: 0rem!important;
+    }
+
+    .card{
+        margin-top:20px ;
+        margin-left:20px ;
+        width: 350px;
+    }
 </style>

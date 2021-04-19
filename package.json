@@ -16,7 +16,8 @@
     "express-validator": "^6.10.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.3",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "vue-property-decorator": "^9.1.2"
   },
   "devDependencies": {
     "concurrently": "^6.0.0",

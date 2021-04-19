@@ -62,7 +62,7 @@
                     
                 </table>
             </b-modal>
-            <b-col cols="4"> <h5> Total Value: Rp.100.000.000.000</h5> </b-col>
+            <b-col cols="4"> <b-badge variant="light"><h5> Total Value: Rp.100.000.000.000 </h5></b-badge> </b-col>
             <b-col id="right">
                 <b-dropdown right text="Sort By" size="sm">
                     <b-dropdown-item>Date</b-dropdown-item>
@@ -87,7 +87,7 @@
                 <b-card-text class="text">Owner: <b-link>Ryan, Bintaro</b-link> </b-card-text>
                 <b-card-text class="text">Car: <b-link>Toyota Yaris TRD, Putih</b-link> </b-card-text>
                 <b-card-text class="text">Plate Number: B 1787 WMR </b-card-text>
-                <b-card-text class="text">Status: Awaiting Payment </b-card-text>
+                <b-card-text class="text"> Status: <b-badge> On progress </b-badge></b-card-text>
                 <b-card-text id="value">Project Value: Rp.40.000.000 </b-card-text>
                 
                 <div class="button">
@@ -193,7 +193,6 @@ export default class Project extends Vue {
 
     .button{
         display: flex;
-        flex-direction: row;
         margin: 0 auto;
     }
 
@@ -228,7 +227,9 @@ export default class Project extends Vue {
     }
 
     h5{
-        padding-top: 6px;
+        padding-left: 6px;
+        padding-right: 6px;
+        padding-top: 10px;
     }
 
     #delete{
